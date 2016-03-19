@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Zadanie:
-% 	Zdefiniować predykat palindrom(L), L jest palindromem,
+%   Zdefiniować predykat palindrom(L), L jest palindromem,
 %   jeżeli czyta się tak samo od przodu i tyłu, np. [a,l,a],
 %   [m,a,d,a,m]. (podpowiedź: można nie/użyć odwroc.)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,24 +22,23 @@ palindrom_ver2([A|L]) :-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tests:
-% 	W celu odpalania testów, użyj predykatu run_tests.,
-% 	po uprzednim załadowaniu pliku.
+%   W celu odpalania testów, użyj predykatu run_tests.,
+%   po uprzednim załadowaniu pliku.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-:- begin_tests(lists).
-:- use_module(library(lists)).
+:- begin_tests(palindrom).
 
 test(palindrom_ver1) :-
-        palindrom_ver1([]),
-        palindrom_ver1([a]),
-        palindrom_ver1([a, b, a]),
-        palindrom_ver1([a, b, b, 1, b, b, a]),
-        \+ palindrom_ver1([a, b]).
+    palindrom_ver1([]),
+    palindrom_ver1([a]),
+    palindrom_ver1([a, b, a]),
+    palindrom_ver1([a, b, b, 1, b, b, a]),
+    \+ palindrom_ver1([a, b]).
 
 test(palindrom_ver2) :-
-        palindrom_ver2([]),
-        palindrom_ver2([a]),
-        palindrom_ver2([a, b, a]),
-        palindrom_ver2([a, b, b, 1, b, b, a]),
-        \+ palindrom_ver2([a, b]).
+    palindrom_ver2([]),
+    palindrom_ver2([a]),
+    palindrom_ver2([a, b, a]),
+    palindrom_ver2([a, b, b, 1, b, b, a]),
+    \+ palindrom_ver2([a, b]).
 
-:- end_tests(lists).
+:- end_tests(palindrom).

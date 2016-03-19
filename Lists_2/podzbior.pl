@@ -10,18 +10,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 isin([X|_], X).
 isin([_|T], Y) :-
-        isin(T, Y).
+    isin(T, Y).
 
 remove_first_X(X, [X|T], T).
 remove_first_X(X, [Y|T], [Y|Tn]) :-
-        X \= Y,
-        remove_first_X(X, T, Tn).
+    X \= Y,
+    remove_first_X(X, T, Tn).
 
 podzbior_ver1(_, []).
 podzbior_ver1(X,[H|T]) :-
-        isin(X, H),
-        remove_first_X(H, X, N),
-        podzbior_ver1(N,T).
+    isin(X, H),
+    remove_first_X(H, X, N),
+    podzbior_ver1(N,T).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tests:
@@ -31,10 +31,10 @@ podzbior_ver1(X,[H|T]) :-
 :- begin_tests(podzbior).
 
 test(podzbior_ver1) :-
-        podzbior_ver1([a,b,c],[c]),
-        podzbior_ver1([a,b,c],[a,c]),
-        podzbior_ver1([a, b, c], []),
-        podzbior_ver1([], []),
-        \+ podzbior_ver1([], [a, b, c]).
+    podzbior_ver1([a,b,c],[c]),
+    podzbior_ver1([a,b,c],[a,c]),
+    podzbior_ver1([a, b, c], []),
+    podzbior_ver1([], []),
+    \+ podzbior_ver1([], [a, b, c]).
 
 :- end_tests(podzbior).

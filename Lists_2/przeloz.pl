@@ -29,8 +29,7 @@ przeloz_ver1([X|XS],[Y|YS]) :-
 %   W celu odpalania testów, użyj predykatu run_tests.,
 %   po uprzednim załadowaniu pliku.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-:- begin_tests(lists).
-:- use_module(library(lists)).
+:- begin_tests(przeloz).
 
 test(przeloz_ver1) :-
     przeloz_ver1([], []),
@@ -38,4 +37,4 @@ test(przeloz_ver1) :-
     przeloz_ver1([1,4,7], [jeden, cztery, siedem]),
     przeloz_ver1([2, 8, 0], [dwa,osiem,zero]).
 
-:- end_tests(lists).
+:- end_tests(przeloz).
