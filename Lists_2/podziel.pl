@@ -30,11 +30,10 @@ podziel_ver2(L, L1, L2):-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tests:
-% 	W celu odpalania testów, użyj predykatu run_tests.,
-% 	po uprzednim załadowaniu pliku.
+%       W celu odpalania testów, użyj predykatu run_tests.,
+%       po uprzednim załadowaniu pliku.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-:- begin_tests(lists).
-:- use_module(library(lists)).
+:- begin_tests(podziel).
 
 test(podziel_ver1) :-
         podziel_ver1([], [], []),
@@ -54,4 +53,4 @@ test(podziel_ver2) :-
         podziel_ver2([1, 2, 3, 4, 5], [1, 2, 3], [4, 5]),
         podziel_ver2([1, 2, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4], [5, 6, 7, 8]).
 
-:- end_tests(lists).
+:- end_tests(podziel).

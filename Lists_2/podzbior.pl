@@ -28,8 +28,7 @@ podzbior_ver1(X,[H|T]) :-
 %   W celu odpalania testów, użyj predykatu run_tests.,
 %   po uprzednim załadowaniu pliku.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-:- begin_tests(lists).
-:- use_module(library(lists)).
+:- begin_tests(podzbior).
 
 test(podzbior_ver1) :-
         podzbior_ver1([a,b,c],[c]),
@@ -38,4 +37,4 @@ test(podzbior_ver1) :-
         podzbior_ver1([], []),
         \+ podzbior_ver1([], [a, b, c]).
 
-:- end_tests(lists).
+:- end_tests(podzbior).

@@ -21,8 +21,8 @@ znaczy(9,dziewiec).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 przeloz_ver1([], []).
 przeloz_ver1([X|XS],[Y|YS]) :-
-        znaczy(X,Y),
-        przeloz_ver1(XS,YS).
+    znaczy(X,Y),
+    przeloz_ver1(XS,YS).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % tests:
@@ -33,9 +33,9 @@ przeloz_ver1([X|XS],[Y|YS]) :-
 :- use_module(library(lists)).
 
 test(przeloz_ver1) :-
-        przeloz_ver1([], []),
-        przeloz_ver1([1], [jeden]),
-        przeloz_ver1([1,4,7], [jeden, cztery, siedem]),
-        przeloz_ver1([2, 8, 0], [dwa,osiem,zero]).
+    przeloz_ver1([], []),
+    przeloz_ver1([1], [jeden]),
+    przeloz_ver1([1,4,7], [jeden, cztery, siedem]),
+    przeloz_ver1([2, 8, 0], [dwa,osiem,zero]).
 
 :- end_tests(lists).
