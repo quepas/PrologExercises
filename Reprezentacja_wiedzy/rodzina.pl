@@ -23,3 +23,22 @@ analizuj(X) :-
     rodzina(_,_,A),
     member(B, A),
     dataUr(B, X).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zadanie:
+%   Wyciągnij imiona i nazwiska osób urodzonych w danym roku
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+imieNaziwskoOsoby(osoba(X, Y, _, _), X, Y).
+imieNaziwskoOsobyRok(osoba(X, Y, data(_,_, R), _), X, Y, R).
+
+analizujRok(I, M, X) :-
+    rodzina(A,_,_),
+    imieNaziwskoOsobyRok(A, I, M, X).
+analizujRok(I, M, X) :-
+    rodzina(_, A,_),
+    imieNaziwskoOsobyRok(A, I, M, X).
+analizujRok(I, M, X) :-
+    rodzina(_,_,A),
+    member(B, A),
+    imieNaziwskoOsobyRok(B, I, M, X).
+
